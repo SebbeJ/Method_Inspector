@@ -62,7 +62,7 @@ if __name__ == "__main__":
                      "Test_case1/test_case1-nestled": {"Type": "folder", "mean method size": 1.75, "weight": 4, "level": 1},
                      "Test_case1/test_case1-nestled/test_case1-3.py": {"Type": "file", "mean method size": 1.75, "weight": 4, "level": 2},
                 }
-                file_path = "Test_case1" 
+                file_path = "../Test_case1" 
 
                 current_dir = os.path.dirname(os.path.abspath(__file__))
                 file_path = current_dir +"/"+file_path

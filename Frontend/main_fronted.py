@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from utils.Backend.main
 
 MIN_WIDTH = 300
 MIN_HEIGHT = 300
@@ -9,19 +10,19 @@ MAX_HEIGHT = 500
 
 filename = "No dir chosen"
 
+settings_dict ={
+    "include inside method": False,
+    "max depth": False
+}
+
 def browseFiles():
     global filename
-    filename = filedialog.askopenfilename(initialdir = "/",
-                                          title = "Select a File",
-                                          filetypes = (("Text files",
-                                                        "*.txt*"),
-                                                       ("all files",
-                                                        "*.*")))
+    filename = filedialog.askdirectory(mustexist=True)
     
     
 
     l.config(text = filename)
-    
+
 
 root = Tk()
 
@@ -44,7 +45,9 @@ e1 = Entry(root)
 e1.grid(row=0, column=1)
 button_explore.grid(row=0, column=2)
 
-
+button_analyze =  Button(root, 
+                        text = "Analyze",
+                        command = browseFiles) 
 
 root.mainloop()
 

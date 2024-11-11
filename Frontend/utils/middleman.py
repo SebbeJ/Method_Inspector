@@ -25,8 +25,11 @@ def create_tree(root_path, include_inside_method):
 
         return folder
 
-def return_data(root_path, settings_dict):
+def get_data(root_path, settings_dict):
     root = create_tree(root_path, include_inside_method=settings_dict["include inside method"])
-    method_data = ""
+    method_data = {}
+    root.retrieve_data(method_data, settings_dict)
+    return method_data
+
 
     

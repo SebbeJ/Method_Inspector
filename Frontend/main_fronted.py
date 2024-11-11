@@ -12,7 +12,13 @@ filename = "No dir chosen"
 
 settings_dict ={
     "include inside method": False,
-    "max depth": False
+    "max depth": False,
+    "show average method size": True,
+    "biggest method": False,
+    "smallest method": False,
+    "mean comments method": False,
+    "mean commetns line": False,
+    "mean docstrings": False
 }
 
 def browseFiles():

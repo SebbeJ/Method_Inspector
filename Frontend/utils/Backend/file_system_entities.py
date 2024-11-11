@@ -52,14 +52,39 @@ class file_system_entity():
     def compile_data(include_inside_method = True):
         pass
 
-    def retrieve_data(self, saved_data, name ="", level=0):
+    def retrieve_data(self, saved_data, settings, name ="", level=0):
         '''Compiles the data into a string, only used for testing'''
         if name != "":
             abs_name = name + "/" + self.name
         else:
             abs_name = self.name
+        
+        method_string = ""
 
-        saved_data[abs_name] = {"Type": self.type, "mean method size": round(self.mean_method_size, 2), "weight": self.weight, "level": level}
+        method_string += f"Type: {self.type}"
+
+
+        if settings["show average method size"]:
+            method_string += f", mean method size: {round(self.mean_method_size, 2)}"
+        if settings["biggest method"]:
+            method_string += f", biggest method size: {self.max_lines}"
+        if settings["smallest method"]:
+            method_string += f", smallest method size: {self.min_lines}"
+        if settings["mean comments method"]:
+            method_string += f", average ammount of comments per method: {round(self.mean_comments, 2)}"
+        if settings["mean comments line"]:
+            mean_comments = 0
+            if self.mean_method_size != 0:
+                mean_comments = self.mean_comments/self.mean_method_size
+                method_string += f", average ammount of comments per line: {round(mean_comments)}"
+            else:
+                mean_comments = "-"
+                method_string += f", average ammount of comments per line: {mean_comments}"
+        if settings["mean docstrings"]:
+            method_string += f", average ammount of docstrings per method: {round(self.mean_docstring, 2)}"
+
+        saved_data[abs_name] = method_string
+
         for child in self.children:
             child.retrieve_data(saved_data, abs_name, level +1)
 

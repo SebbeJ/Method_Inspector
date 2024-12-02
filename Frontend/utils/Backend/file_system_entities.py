@@ -1,6 +1,6 @@
 import re
-from  method_obj import method
-
+# from  method_obj import method
+from .method_obj import method
 class file_system_entity():
     def __init__(self, name, type, path):
         self.name = name
@@ -52,7 +52,7 @@ class file_system_entity():
     def compile_data(include_inside_method = True):
         pass
 
-    def retrieve_data(self, saved_data, settings, name ="", level=0):
+    def retrieve_data(self, saved_data, settings : dict, name ="", level=0):
         '''Compiles the data into a string, only used for testing'''
         if name != "":
             abs_name = name + "/" + self.name
@@ -86,7 +86,7 @@ class file_system_entity():
         saved_data[abs_name] = method_string
 
         for child in self.children:
-            child.retrieve_data(saved_data, abs_name, level +1)
+            child.retrieve_data(saved_data, settings, abs_name, level +1)
 
     def print_structure(self, level=0, max_level = None, mean_method= True, max=True, min=True, mean_comments=False, mean_comment_per_line = False, mean_docstring=False, mean_docstring_comment = False):
         '''Prints the entire structure of the tree'''

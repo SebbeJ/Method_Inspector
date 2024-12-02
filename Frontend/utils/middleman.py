@@ -1,4 +1,4 @@
-from Backend.file_system_entities import file, dir
+from .Backend.file_system_entities import file, dir
 import os
 
 def create_tree(root_path, include_inside_method):

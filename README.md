@@ -64,7 +64,7 @@ npm run dev
 
 after which you should be able to go to localhost:3000 on your browser and you see the magic work.
 
-> [!TIPS]
+> [!TIP]
 > When debugging you can run the flag ```--loglevel``` with either ```verbose``` > or ```silly```. So in total it would look something like:
 > 
 > ```

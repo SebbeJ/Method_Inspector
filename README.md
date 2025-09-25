@@ -64,10 +64,13 @@ npm run dev
 
 after which you should be able to go to localhost:3000 on your browser and you see the magic work.
 
+> [!TIPS]
 > When debugging you can run the flag ```--loglevel``` with either ```verbose``` > or ```silly```. So in total it would look something like:
 > 
 > ```
 > npm run --loglevel silly
 > ```
 ---
+
+> [!NOTE]
 > Does all of this look easy? That is because Albin and Sebbe has made some changes to the github that we are not proud of

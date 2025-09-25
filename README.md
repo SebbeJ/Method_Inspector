@@ -1,4 +1,4 @@
-#How to make it work for the first time
+# How to make it work for the first time
 > A very simple and non-proffesional guide
 
 ---

@@ -7,8 +7,6 @@
 
 You know this. Just use https://docs.docker.com/desktop/setup/install/windows-install/ and install it. We will run the databases (all three of them) using docker. 
 
-<!-- ![](Pisces_files/Trip_plan.jpg){width=300 fig-align="center"} -->
-
 ### 2. Download the project using git
 Ye
 
